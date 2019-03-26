@@ -2,7 +2,6 @@ class Ability
   include CanCan::Ability
   
   def initialize(user)
-    puts user.id
     if user.has_role? :admin  #这里的admin权限等级最高，能增删改查。
       can :manage, :all
     else
