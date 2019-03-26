@@ -1,0 +1,55 @@
+<% if @article.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@article.errors.count, "error") %> prohibited
+      this article from being saved:
+    </h2>
+    <ul>
+      <% @article.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      /ul>
+  </div>
+<% end %>
+
+<%= form_for(@article) do |f| %>
+  <p hidden>
+    <%= f.text_field :user_id %>
+  </p>
+  <p>
+    <%= f.label :姓名 %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :日期 %><br>
+    <%= f.text_field :time %>
+  </p>
+  <p>
+    <%= f.label :本周完成主要工作内容 %><br>
+    <%= f.text_area :content %>
+  </p>
+  <p>
+    <%= f.label :本周工作记录，按每日进行说明 %><br>
+    <%= f.text_area :record %>
+  </p>
+  <p>
+    <%= f.label :本周工作存在的问题及建议解决方案，是否已经解决 %><br>
+    <%= f.text_area :issue %>
+  </p>
+  <p>
+    <%= f.label :下周工作任务 %><br>
+    <%= f.text_area :task %>
+  </p>
+  <p>
+    <%= f.label :额外工作说明 %><br>
+    <%= f.text_area :explain %>
+  </p>
+  <p>
+    <%= f.label :本周工作总结 %><br>
+    <%= f.text_area :summart %>
+  </p>
+  
+  <p>
+      <%= f.submit %>
+  </p>
+<% end %>

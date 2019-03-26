@@ -1,0 +1,43 @@
+<h1>详情</h1>
+
+<p>
+  <strong>名字:</strong>
+  <%= @article.name %>
+</p>
+ 
+<p>
+  <strong>时间:</strong>
+  <%= @article.time %>
+</p>
+
+<p>
+  <strong>本周完成主要工作内容:</strong><br>
+  <%= @article.content %>
+</p>
+
+<p>
+  <strong>本周工作记录，按每日进行说明:</strong><br>
+  <%= @article.record %>
+</p>
+
+<p>
+  <strong>本周工作存在的问题及建议解决方案，是否已经解决:</strong><br>
+  <%= @article.issue %>
+</p>
+
+<p>
+  <strong>下周工作任务:</strong><br>
+  <%= @article.task %>
+</p>
+
+<p>
+  <strong>额外工作说明:</strong><br>
+  <%= @article.explain %>
+</p>
+
+<p>
+  <strong>本周工作总结:</strong><br>
+  <%= @article.summart %>
+</p>
+
+<h3 align="center"><%= link_to '返回目录', controller: 'articles' %></h3>
